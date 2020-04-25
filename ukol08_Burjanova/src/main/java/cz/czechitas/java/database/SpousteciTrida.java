@@ -1,16 +1,22 @@
 package cz.czechitas.java.database;
 
 import org.mariadb.jdbc.MariaDbDataSource;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import java.sql.SQLException;
 
 public class SpousteciTrida {
+
+
 
     public static void main(String[] args) throws SQLException {
         MariaDbDataSource konfiguraceDatabaze = new MariaDbDataSource();
@@ -19,9 +25,41 @@ public class SpousteciTrida {
         konfiguraceDatabaze.setPassword("password");
 
         JdbcTemplate odesilacDotazu = new JdbcTemplate(konfiguraceDatabaze);
+        //RowMapper<Clanek2> prevodnikClanky;
+        //prevodnikClanky = BeanPropertyRowMapper.newInstance(Clanek.class);
+        //získej a vypiš všechny články
+
+        List<Clanek> clanky2 = odesilacDotazu.query("select * from Clanky", new ResultSetExtractor<List<Clanek>>() {
+            @Override
+            public List<Clanek> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+
+                List<Clanek> clanekList = new ArrayList();
+                while(resultSet.next()) {
+                    Clanek cl = new Clanek();
+                    cl.setId_clanku(resultSet.getLong("id_clanku"));
+                    cl.setAutor(resultSet.getString("Autor"));
+                    cl.setNazev(resultSet.getString("Nazev"));
+                    cl.setDatum(resultSet.getString("Datum"));
+                    cl.setId_autor(resultSet.getLong("id_autor"));
+                }
+                return clanekList;
+            }
+        });
+
+        System.out.println("*************************************************************************");
+        System.out.println();
+        System.out.println("Seznam všech článků Daily Planet:");
+        System.out.println();
+        for (Clanek c : clanky2) {
+            System.out.println(c);
+        }
+
+
+
 
         RowMapper<Clanek> prevodnikClanky;
         prevodnikClanky = BeanPropertyRowMapper.newInstance(Clanek.class);
+        /*
         //získej a vypiš všechny články
         List<Clanek> clanky = odesilacDotazu.query("select * from Clanky", prevodnikClanky);
         System.out.println("*************************************************************************");
@@ -35,6 +73,14 @@ public class SpousteciTrida {
         Long pocetClanku = odesilacDotazu.queryForObject("select count (*) from Clanky", Long.class);
 
         System.out.println("V databázi je " + pocetClanku + " článků");
+
+ */
+        System.out.println("*************************************************************************");
+        System.out.println("*************************************************************************");
+        System.out.println("*************************************************************************");
+        System.out.println("*************************************************************************");
+        System.out.println("*************************************************************************");
+        System.out.println("*************************************************************************");
 
         RowMapper<Zamestnanec> prevodnikZamci;
         prevodnikZamci = BeanPropertyRowMapper.newInstance(Zamestnanec.class);
@@ -113,4 +159,7 @@ public class SpousteciTrida {
         }
 
     }
+
+
+
 }
