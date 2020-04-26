@@ -29,7 +29,7 @@ public class PrevodnikClankuSAutory implements ResultSetExtractor<Collection<Cla
             Clanek clanek = register(clanky, clanekId, clanekRowMapper.mapRow(rs, rowNum));
             clanek.setId(clanekId);      // doplni vlastnosti, ktere se rowMapperu nepodarilo namapovat
 
-            Long autorId = rs.getLong("autor_id");
+            Long autorId = rs.getLong("autorId");
             Zamestnanec autor = register(zamestnanci, autorId, zamestnanecRowMapper.mapRow(rs, rowNum));
             autor.setId(autorId);       // doplni vlastnosti, ktere se rowMapperu nepodarilo namapovat
 

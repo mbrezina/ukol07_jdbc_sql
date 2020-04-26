@@ -115,7 +115,7 @@ public class SpousteciTrida {
         ResultSetExtractor<Collection<Clanek>> prevodnikClankuSAutory = new PrevodnikClankuSAutory();
         Collection<Clanek> clanky = odesilacDotazu.query("" +
                 "select clanky.idClanku as idClanku, clanky.nazev as nazev, clanky.datum as datum, " +
-                "       zamestnanci.idAutor as autor_id, zamestnanci.jmeno as jmeno, zamestnanci.bydliste as bydliste, zamestnanci.plat, zamestnanci.datumNastupu " +
+                "       zamestnanci.idAutor as autorId, zamestnanci.jmeno as jmeno, zamestnanci.bydliste as bydliste, zamestnanci.plat, zamestnanci.datumNastupu " +
                 "  from clanky join zamestnanci on clanky.idAutor=zamestnanci.idAutor", prevodnikClankuSAutory);
 
 
