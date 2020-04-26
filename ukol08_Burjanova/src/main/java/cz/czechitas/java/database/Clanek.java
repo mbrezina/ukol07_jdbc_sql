@@ -1,54 +1,58 @@
 package cz.czechitas.java.database;
 
 public class Clanek {
-    private Long id_clanku;
-    private String Nazev;
-    private String Autor;
-    private Long id_autor;
-    private String Datum;
 
-    public void setId_clanku(Long id_clanku) {
-        this.id_clanku = id_clanku;
+    private Long id;
+    private String nazev;
+    private Zamestnanec autor;
+    private String datum;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public void setAutor(Zamestnanec autor) {
+        this.autor = autor;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNazev() {
+        return nazev;
+    }
+
+    public Zamestnanec getAutor() {
+        return autor;
+    }
+
+    public String getDatum() {
+        return datum;
     }
 
     @Override
     public String toString() {
-        return id_clanku + ": " + Nazev + ", " + Autor + ", vydáno dne " + Datum;
+        return id + ": " + nazev + ", " + autor + ", vydáno dne " + datum;
     }
 
-    public void setNazev(String nazev) {
-        Nazev = nazev;
+
+    public String clankysPodleAutora() {
+        return "Id článku: " + id + ": Název: " + getNazev() + ", vydán dne: " + getDatum();
     }
 
-    public void setAutor(String autor) {
-        Autor = autor;
+
+    public String clankysAutoryPrint() {
+        return "Autor: " + getAutor();
     }
 
-    public void setId_autor(Long id_autor) {
-        this.id_autor = id_autor;
-    }
 
-    public void setDatum(String datum) {
-        Datum = datum;
-    }
-
-    public Long getId_clanku() {
-        return id_clanku;
-    }
-
-    public String getNazev() {
-        return Nazev;
-    }
-
-    public String getAutor() {
-        return Autor;
-    }
-
-    public Long getId_autor() {
-        return id_autor;
-    }
-
-    public String getDatum() {
-        return Datum;
-    }
 }

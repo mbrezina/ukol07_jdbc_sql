@@ -1,19 +1,20 @@
 package cz.czechitas.java.database;
 
 public class Zamestnanec {
-    private int id_autor;
+
+    private Long id;
     private String jmeno;
     private String bydliste;
     private int plat;
-    private String datum_nastupu;
+    private String datumNastupu;
 
-    @Override
-    public String toString() {
-        return id_autor + ": Jméno: " + jmeno + ", bydliště: " + bydliste + ", měsíční plat: " + plat + "Kč, v Daily planet od: "+  datum_nastupu;
+
+    public String zamestnanciPrint() {
+        return "Jméno: " + jmeno + ", bydliště: " + bydliste + ", měsíční plat: " + plat + "Kč, v Daily planet od: "+ datumNastupu;
     }
 
-    public void setId_autor(int id_autor) {
-        this.id_autor = id_autor;
+        public void setId(Long id) {
+        this.id = id;
     }
 
     public void setJmeno(String jmeno) {
@@ -28,12 +29,12 @@ public class Zamestnanec {
         this.plat = plat;
     }
 
-    public void setDatum_nastupu(String datum_nastupu) {
-        this.datum_nastupu = datum_nastupu;
+    public void setDatumNastupu(String datumNastupu) {
+        this.datumNastupu = datumNastupu;
     }
 
-    public int getId_autor() {
-        return id_autor;
+    public Long getId() {
+        return id;
     }
 
     public String getJmeno() {
@@ -48,7 +49,9 @@ public class Zamestnanec {
         return plat;
     }
 
-    public String getDatum_nastupu() {
-        return datum_nastupu;
+    public String getDatumNastupu() {
+        return datumNastupu;
     }
+
+
 }
