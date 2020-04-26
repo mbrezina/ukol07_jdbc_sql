@@ -17,13 +17,15 @@ public class PrevodnikClankuSAutory implements ResultSetExtractor<Collection<Cla
     public Collection<Clanek> extractData(ResultSet rs) throws SQLException, DataAccessException {
         Map<Long, Clanek> clanky = new TreeMap<>();
         Map<Long, Zamestnanec> zamestnanci = new HashMap<>();
+
         RowMapper<Clanek> clanekRowMapper = BeanPropertyRowMapper.newInstance(Clanek.class);
         RowMapper<Zamestnanec> zamestnanecRowMapper = BeanPropertyRowMapper.newInstance(Zamestnanec.class);
+
         int rowNum = 0;
         while (rs.next()) {
             rowNum++;
 
-            Long clanekId = rs.getLong("id_clanku");
+            Long clanekId = rs.getLong("idClanku");
             Clanek clanek = register(clanky, clanekId, clanekRowMapper.mapRow(rs, rowNum));
             clanek.setId(clanekId);      // doplni vlastnosti, ktere se rowMapperu nepodarilo namapovat
 

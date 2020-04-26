@@ -3,16 +3,16 @@ package cz.czechitas.java.database;
 public class Clanek {
 
     private Long id;
-    private String Nazev;
+    private String nazev;
     private Zamestnanec autor;
-    private String Datum;
+    private String datum;
 
     public void setId(Long id) {
         this.id = id;
     }
 
     public void setNazev(String nazev) {
-        Nazev = nazev;
+        this.nazev = nazev;
     }
 
     public void setAutor(Zamestnanec autor) {
@@ -20,7 +20,7 @@ public class Clanek {
     }
 
     public void setDatum(String datum) {
-        Datum = datum;
+        datum = datum;
     }
 
     public Long getId() {
@@ -28,7 +28,7 @@ public class Clanek {
     }
 
     public String getNazev() {
-        return Nazev;
+        return nazev;
     }
 
     public Zamestnanec getAutor() {
@@ -36,11 +36,11 @@ public class Clanek {
     }
 
     public String getDatum() {
-        return Datum;
+        return datum;
     }
 
     @Override
     public String toString() {
-        return id + ": " + Nazev + ", " + autor + ", vydáno dne " + Datum;
+        return id + ": " + nazev + ", " + autor + ", vydáno dne " + datum;
     }
 }
