@@ -46,7 +46,7 @@ public class Clanek {
 
 
     public String clankysPodleAutora() {
-        return "Název: " + getNazev() + ", vydán dne: " + getDatum();
+        return "Id článku: " + id + ": Název: " + getNazev() + ", vydán dne: " + getDatum();
     }
 
 
