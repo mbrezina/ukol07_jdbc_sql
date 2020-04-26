@@ -45,8 +45,13 @@ public class Clanek {
     }
 
 
-    public String clankysAutoryPrint(Clanek clanek) {
-        return "Autor: " + clanek.getAutor();
+    public String clankysPodleAutora() {
+        return "Název: " + getNazev() + ", vydán dne: " + getDatum();
+    }
+
+
+    public String clankysAutoryPrint() {
+        return "Autor: " + getAutor();
     }
 
 

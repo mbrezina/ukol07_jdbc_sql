@@ -50,34 +50,34 @@ INSERT INTO zamestnanci (idAutor, jmeno, bydliste, plat, datumNastupu) VALUES (4
 
 
 
-CREATE TABLE Prodany_naklad ( 
-  Datum DATE DEFAULT now() NOT NULL,
-  Den_v_tydnu VARCHAR(15),
-  Prodany_naklad INT,
-  Zisk numeric(8,1)
+CREATE TABLE prodanyNaklad ( 
+  datum DATE DEFAULT now() NOT NULL,
+  denVTydnu VARCHAR(15),
+  prodanyNaklad INT,
+  zisk numeric(8,1)
 );	
   
 	
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-01', 'pondělí', 12563, 6281.5);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-02', 'úterý', 25456, 12728);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-03', 'středa', 345, 172.5);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-04', 'čtvrtek', 3548, 1774);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-05', 'pátek', 5464, 2732);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-08', 'pondělí', 6545, 3272.5);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-09', 'úterý', 8672, 4336);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-10', 'středa', 256464, 128232);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-11', 'čtvrtek', 8648, 4324);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-12', 'pátek', 484, 242);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-15', 'pondělí', 84684, 42342);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-16', 'úterý', 684, 342);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-17', 'středa', 5454, 2727);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-18', 'čtvrtek', 5465, 2732.5);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-19', 'pátek', 28848, 14424);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-22', 'pondělí', 8787, 4393.5);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-23', 'úterý', 86786, 43393);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-24', 'středa', 5688, 2844);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-25', 'čtvrtek', 54868, 27434);
-INSERT INTO Prodany_naklad (Datum, Den_v_tydnu, prodany_naklad, Zisk) VALUES ('2019-02-26', 'pátek', 4888, 2444);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-01', 'pondělí', 12563, 6281.5);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-02', 'úterý', 25456, 12728);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-03', 'středa', 345, 172.5);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-04', 'čtvrtek', 3548, 1774);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-05', 'pátek', 5464, 2732);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-08', 'pondělí', 6545, 3272.5);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-09', 'úterý', 8672, 4336);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-10', 'středa', 256464, 128232);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-11', 'čtvrtek', 8648, 4324);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-12', 'pátek', 484, 242);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-15', 'pondělí', 84684, 42342);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-16', 'úterý', 684, 342);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-17', 'středa', 5454, 2727);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-18', 'čtvrtek', 5465, 2732.5);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-19', 'pátek', 28848, 14424);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-22', 'pondělí', 8787, 4393.5);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-23', 'úterý', 86786, 43393);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-24', 'středa', 5688, 2844);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-25', 'čtvrtek', 54868, 27434);
+INSERT INTO prodanyNaklad (datum, denVTydnu, prodanyNaklad, zisk) VALUES ('2019-02-26', 'pátek', 4888, 2444);
 
 
 

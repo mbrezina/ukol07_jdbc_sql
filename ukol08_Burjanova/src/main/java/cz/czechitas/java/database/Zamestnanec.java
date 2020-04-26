@@ -8,12 +8,12 @@ public class Zamestnanec {
     private int plat;
     private String datumNastupu;
 
-    @Override
-    public String toString() {
-        return id + ": Jméno: " + jmeno + ", bydliště: " + bydliste + ", měsíční plat: " + plat + "Kč, v Daily planet od: "+ datumNastupu;
+
+    public String zamestnanciPrint() {
+        return "Jméno: " + jmeno + ", bydliště: " + bydliste + ", měsíční plat: " + plat + "Kč, v Daily planet od: "+ datumNastupu;
     }
 
-    public void setId(Long id) {
+        public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,4 +52,6 @@ public class Zamestnanec {
     public String getDatumNastupu() {
         return datumNastupu;
     }
+
+
 }
