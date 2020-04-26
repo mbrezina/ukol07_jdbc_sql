@@ -20,7 +20,7 @@ public class Clanek {
     }
 
     public void setDatum(String datum) {
-        datum = datum;
+        this.datum = datum;
     }
 
     public Long getId() {
