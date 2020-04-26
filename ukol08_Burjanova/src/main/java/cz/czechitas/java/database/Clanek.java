@@ -43,4 +43,11 @@ public class Clanek {
     public String toString() {
         return id + ": " + nazev + ", " + autor + ", vydáno dne " + datum;
     }
+
+
+    public String clankysAutoryPrint(Clanek clanek) {
+        return "Autor: " + clanek.getAutor();
+    }
+
+
 }

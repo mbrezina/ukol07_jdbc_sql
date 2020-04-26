@@ -1,12 +1,15 @@
 package cz.czechitas.java.database;
 
 import org.mariadb.jdbc.MariaDbDataSource;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.util.Collection;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class SpousteciTrida {
 
@@ -18,18 +21,20 @@ public class SpousteciTrida {
 
         JdbcTemplate odesilacDotazu = new JdbcTemplate(konfiguraceDatabaze);
 
+
 /*
         RowMapper<Clanek> prevodnikClanky;
         prevodnikClanky = BeanPropertyRowMapper.newInstance(Clanek.class);
         //získej a vypiš všechny články
-        List<Clanek> clanky = odesilacDotazu.query("select * from Clanky", prevodnikClanky);
-        System.out.println("*************************************************************************");
+        List<Clanek> clanky = odesilacDotazu.query("select * from clanky", prevodnikClanky);
         System.out.println();
+        System.out.println("*************************************************************************");
         System.out.println("Seznam všech článků Daily Planet:");
         System.out.println();
         for (Clanek c : clanky) {
             System.out.println(c);
         }
+
         //získej počet článků:
         Long pocetClanku = odesilacDotazu.queryForObject("select count (*) from Clanky", Long.class);
 
@@ -113,17 +118,20 @@ public class SpousteciTrida {
 */
 
         ResultSetExtractor<Collection<Clanek>> prevodnikClankuSAutory = new PrevodnikClankuSAutory();
-        Collection<Clanek> clanky = odesilacDotazu.query("" +
+        Collection<Clanek> clanky2 = odesilacDotazu.query("" +
                 "select clanky.idClanku as idClanku, clanky.nazev as nazev, clanky.datum as datum, " +
                 "       zamestnanci.idAutor as autorId, zamestnanci.jmeno as jmeno, zamestnanci.bydliste as bydliste, zamestnanci.plat, zamestnanci.datumNastupu " +
                 "  from clanky join zamestnanci on clanky.idAutor=zamestnanci.idAutor", prevodnikClankuSAutory);
 
 
-        for (Clanek clanek : clanky) {
+        for (Clanek clanek : clanky2) {
 
-            System.out.println(clanek);
+            System.out.println("Autor: " + clanek.getAutor().getJmeno() + "název: " + clanek.getNazev());
 
         }
     }
+
+
+
 
 }
