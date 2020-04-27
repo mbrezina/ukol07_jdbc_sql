@@ -45,13 +45,13 @@ public class Clanek {
     }
 
 
-    public String clankysPodleAutora() {
-        return "Id článku: " + id + ": Název: " + getNazev() + ", vydán dne: " + getDatum();
+    public String clankySIdPodleAutora() {
+        return "Id článku: " + id + ": " + nazev + ", autor: " + autor.getJmeno() + ", vydán dne: " + datum;
     }
 
 
-    public String clankysAutoryPrint() {
-        return "Autor: " + getAutor();
+    public String clankyBezAutora() {
+        return "Id článku: " + id + ": " + nazev + ", vydán dne: " + datum;
     }
 
 
